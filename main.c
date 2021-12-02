@@ -39,15 +39,30 @@ int main_memmove(int argc, char **argv)
     }
 
     return (1);
+
+
+    int main_strlcpy(int argc, char **argv)
+    {
+        if(argc > 3)
+        {
+            size_t size = strlcpy(argv[1], argv[2], atoi(argv[5]));
+            printf("%s - %ld\n", argv[1], size);
+            size = strlcpy(argv[3], argv[4], atoi(argv[5]));
+            printf("%s - %ld\n", argv[3], size);
+        }
+
+        return (1);
+    }
 }*/
+
 
 int main(int argc, char **argv)
 {
     if(argc > 3)
     {
-        size_t size = strlcpy(argv[1], argv[2], atoi(argv[5]));
+        size_t size = strlcat(argv[1], argv[2], atoi(argv[5]));
         printf("%s - %ld\n", argv[1], size);
-        size = strlcpy(argv[3], argv[4], atoi(argv[5]));
+        size = ft_strlcat(argv[3], argv[4], atoi(argv[5]));
         printf("%s - %ld\n", argv[3], size);
     }
 
